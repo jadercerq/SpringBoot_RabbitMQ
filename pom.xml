@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>br.com.emmanuelneri</groupId>
+	<groupId>br.com.jadercerq</groupId>
 	<artifactId>spring-boot-rabbitmq</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -34,9 +34,9 @@
 	</dependencies>
 
 	<modules>
-        <module>sender</module>
-		<module>consumer</module>
-	 <module>consumerMessagePattern</module>
+	 <module>producer</module>
+	 <module>consumerA</module>
+	 <module>consumerB</module>
 	</modules>
 
 </project>
