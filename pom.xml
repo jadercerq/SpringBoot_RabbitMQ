@@ -36,6 +36,7 @@
 	<modules>
         <module>sender</module>
 		<module>consumer</module>
-    </modules>
+	 <module>consumerMessagePattern</module>
+	</modules>
 
 </project>
