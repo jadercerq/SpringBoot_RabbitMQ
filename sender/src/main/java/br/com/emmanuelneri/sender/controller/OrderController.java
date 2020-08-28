@@ -18,7 +18,10 @@ public class OrderController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void send(@RequestBody String order) {
-        orderQueueSender.send(order);
+        for (int i = 0; i < 50; i++) {
+            String jobs = order.concat(" - ") + i;
+            orderQueueSender.send(jobs);
+        }
     }
 
 }
