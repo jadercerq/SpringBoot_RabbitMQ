@@ -1,32 +1,8 @@
 # spring-boot-rabbitmq
 
-Código fonte do Post: [RabbitMQ no Spring Boot](https://wp.me/p5RSbg-jZ).
 
-## Pré requisito
+#### Baixar RabbitMQ Docker
 
-- Maven 3
-- Java 8
-- RabbitMQ 3.7.2
-
-## Configurando RabbitMQ
-
-- Acessar ```http://localhost:15672/#/queue```
-- Criar Queue com o nome ```OrderQueue``` com o atribributo Durability ```Durable```
-
-## Preparando ambiente
-
-- ```cd spring-boot-rabbitmq```
-- ```mvn clean package```
-
-## Executando 
-
-#### Enviando pedidos para fila do RabbitMQ
-
-- ```cd spring-boot-rabbitmq/sender```
-- ```mvn spring-boot:run```
+docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
 
 
-#### Consumindo fila do RabbitMQ
-
-- ```cd spring-boot-rabbitmq/consumer```
-- ```mvn spring-boot:run```
