@@ -9,15 +9,23 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SenderAppConfig {
 
-    @Value("${queue.order.name}")
-    private String orderQueue;
+    @Value("${routing.order.car}")
+    private String orderQueueCar;
+    
+    @Value("${routing.order.bike}")
+    private String orderQueueBike;
 
     public static void main(String[] args) {
         SpringApplication.run(SenderAppConfig.class, args);
     }
 
     @Bean
-    public Queue queue() {
-        return new Queue(orderQueue, true);
+    public Queue queueCar() {
+        return new Queue(orderQueueCar, true);
+    }
+    
+    @Bean
+    public Queue queueBike() {
+        return new Queue(orderQueueBike, true);
     }
 }
