@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class ConsumerMessagePattern {
-    @RabbitListener(queues = {"${queue.order.name}"})
+    @RabbitListener(queues = {"${routing.order.bike}"})
     public void receive(@Payload String order) {
-        log.info("Order: " + order);
+        System.out.println("Order: " + order);
     }
 }

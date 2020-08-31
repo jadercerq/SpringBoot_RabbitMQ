@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class OrderConsumer {
 
-    @RabbitListener(queues = {"${queue.order.name}"})
+    @RabbitListener(queues = {"${routing.order.car}"})
     public void receive(@Payload String order) {
-        log.info("Order: " + order);
+        System.out.println("Order: " + order);
     }
 }

@@ -11,6 +11,6 @@ public class OrderQueueSender {
     private RabbitTemplate rabbitTemplate;
 
     public void send(String routingKey, String parkType) {
-        rabbitTemplate.convertAndSend("amqp.direct", routingKey, parkType);
+        rabbitTemplate.convertAndSend("amq.direct", routingKey, parkType);
     }
 }
