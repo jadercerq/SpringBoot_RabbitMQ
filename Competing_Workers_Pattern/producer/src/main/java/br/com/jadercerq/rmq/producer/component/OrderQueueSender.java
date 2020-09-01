@@ -10,7 +10,9 @@ public class OrderQueueSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void send(String routingKey, String parkType) {
-        rabbitTemplate.convertAndSend("amq.direct", routingKey, parkType);
+    public void send(String routingKey, String job, Integer quantidade) {
+        for (Integer i = 0; i < quantidade; i++) {
+            rabbitTemplate.convertAndSend("amq.direct", routingKey, job.concat(i.toString()));
+        }
     }
 }
